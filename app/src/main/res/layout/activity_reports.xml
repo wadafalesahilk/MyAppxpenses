@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleReports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Reports"
+        android:textSize="26sp"
+        android:textColor="#2196F3"
+        android:shadowColor="#808080"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Income and Expense Summary -->
+    <LinearLayout
+        android:id="@+id/summaryLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/gradient_card"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/titleReports"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false">
+
+        <!-- Total Income -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelTotalIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Income"
+                android:textSize="14sp"
+                android:textColor="#388E3C" />
+
+            <TextView
+                android:id="@+id/valueTotalIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹0.00"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#000" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#D3D3D3" />
+
+        <!-- Total Expense -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelTotalExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Expense"
+                android:textSize="14sp"
+                android:textColor="#F44336" />
+
+            <TextView
+                android:id="@+id/valueTotalExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹0.00"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Pie Chart -->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/summaryLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/labelTransactionList" />
+
+    <!-- Recent Transactions Label -->
+    <TextView
+        android:id="@+id/labelTransactionList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent Transactions"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@id/pieChart"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Transaction List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/transactionRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:background="@drawable/rounded_card"
+        android:padding="8dp"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/labelTransactionList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

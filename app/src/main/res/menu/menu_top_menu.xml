@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_view_reports"
+        android:title="View Reports"
+        android:icon="@drawable/baseline_list_alt_24" />
+    <item
+        android:id="@+id/action_check_balance"
+        android:title="Check Balance"
+        android:icon="@drawable/baseline_currency_rupee_24" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/baseline_settings_24" />
+    <item
+        android:id="@+id/action_help"
+        android:title="Help"
+        android:icon="@drawable/baseline_live_help_24" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@drawable/baseline_logout_24" />
+</menu>

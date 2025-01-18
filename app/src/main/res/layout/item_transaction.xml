@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹0.00"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="14sp"
+        android:textColor="#666"
+        app:layout_constraintTop_toTopOf="@id/textAmount"
+        app:layout_constraintStart_toEndOf="@id/textAmount" />
+
+    <TextView
+        android:id="@+id/textNotes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textSize="14sp"
+        android:textColor="#666"
+        app:layout_constraintTop_toBottomOf="@id/textAmount"
+        app:layout_constraintStart_toStartOf="@id/textAmount"
+        app:layout_constraintEnd_toEndOf="@id/textDate"/>
+
+    <TextView
+        android:id="@+id/textCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textSize="14sp"
+        android:textColor="#666"
+        app:layout_constraintTop_toBottomOf="@id/textNotes"
+        app:layout_constraintStart_toStartOf="@id/textAmount" />
+
+    <TextView
+        android:id="@+id/textType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        android:textSize="14sp"
+        android:textColor="#666"
+        app:layout_constraintTop_toBottomOf="@id/textCategory"
+        app:layout_constraintStart_toStartOf="@id/textAmount" />
+
+    <ImageButton
+        android:id="@+id/buttonEdit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_edit"
+        android:contentDescription="Edit"
+        app:tint="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_delete"
+        android:contentDescription="Delete"
+        app:tint="?attr/colorError"
+        app:layout_constraintTop_toBottomOf="@id/buttonEdit"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/background_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Transaction"
+            android:textSize="24sp"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Amount Input -->
+        <EditText
+            android:id="@+id/editAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Date Input -->
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Date (YYYY-MM-DD)"
+            android:inputType="date"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Notes Input -->
+        <EditText
+            android:id="@+id/editNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Notes"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Category Spinner -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Category"
+            android:textColor="#000"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_background"
+            android:entries="@array/expense_categories"/>
+
+        <!-- Type Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Type"
+            android:textColor="#000"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:buttonTint="#4CAF50"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expense"
+                android:buttonTint="#F44336"
+                android:padding="8dp" />
+        </RadioGroup>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Transaction"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="@android:color/white"
+            android:elevation="4dp"
+            android:padding="16dp" />
+    </LinearLayout>
+</ScrollView>
